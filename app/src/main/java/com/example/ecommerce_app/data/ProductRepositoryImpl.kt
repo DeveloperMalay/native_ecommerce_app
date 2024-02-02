@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.flow
 import java.io.IOException
 
 class ProductRepositoryImpl(private val api: Api) : ProductRepository {
+
     @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
     override suspend fun getProductsList(): Flow<Result<List<Product>>> {
         return flow {

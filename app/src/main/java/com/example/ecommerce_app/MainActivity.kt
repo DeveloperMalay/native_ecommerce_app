@@ -44,6 +44,7 @@ import com.example.ecommerce_app.presentation.ProductViewModel
 import com.example.ecommerce_app.ui.theme.Ecommerce_appTheme
 import kotlinx.coroutines.flow.collectLatest
 
+
 class MainActivity : ComponentActivity() {
     private val viewModel by viewModels<ProductViewModel>(
         factoryProducer = {
@@ -59,11 +60,12 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             Ecommerce_appTheme {
-                
+
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+//                    val mainViewModel = HiltViewModel<ProductViewModel>()
                     val productList = viewModel.products.collectAsState().value
                     val context = LocalContext.current
 
